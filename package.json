@@ -5,16 +5,14 @@
   "keywords": [
     "ringcentral",
     "bot",
-    "framework",
-    "python",
-    "template"
+    "welcome"
   ],
   "scripts": {
-    "proxy": "./node_modules/.bin/ngrok http 3000",
+    "proxy": "ngrok http 3000",
     "build": "node bin/build",
     "deploy": "node bin/deploy",
     "watch": "cd dist && ../node_modules/.bin/sls logs -f app -t",
-    "lint": "./node_modules/.bin/eslint --max-warnings 0 --ext .js  src",
+    "lint": "eslint --max-warnings 0 --ext .js  src",
     "start": "npm run dev",
     "dev": "node -r @babel/register -r dotenv/config ./src/express"
   },
@@ -45,5 +43,15 @@
     "ringcentral-chatbot": "^0.5.3",
     "serverless-http": "^1.8.0",
     "sqlite3": "4.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxdong262/ringcentral-welcome-bot-js.git"
+  },
+  "author": "Drake Zhao <Drake.Zhao@ringcentral.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zxdong262/ringcentral-welcome-bot-js/issues"
+  },
+  "homepage": "https://github.com/zxdong262/ringcentral-welcome-bot-js#readme"
 }
