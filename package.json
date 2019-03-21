@@ -1,0 +1,49 @@
+{
+  "name": "ringcentral-welcome-bot",
+  "version": "0.0.1",
+  "description": "Glip chatbot to welcome new chatgroup member",
+  "keywords": [
+    "ringcentral",
+    "bot",
+    "framework",
+    "python",
+    "template"
+  ],
+  "scripts": {
+    "proxy": "./node_modules/.bin/ngrok http 3000",
+    "build": "node bin/build",
+    "deploy": "node bin/deploy",
+    "watch": "cd dist && ../node_modules/.bin/sls logs -f app -t",
+    "lint": "./node_modules/.bin/eslint --max-warnings 0 --ext .js  src",
+    "start": "npm run dev",
+    "dev": "node -r @babel/register -r dotenv/config ./src/express"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "10.0.1",
+    "dotenv": "6.1.0",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-compat": "2.2.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-standard": "3.1.0",
+    "js-yaml": "3.12.1",
+    "ngrok": "3.1.0",
+    "recursive-assign": "0.2.0",
+    "serverless": "1.32.0",
+    "shelljs": "0.8.2"
+  },
+  "dependencies": {
+    "lodash": "4.17.11",
+    "pg": "^7.7.1",
+    "ringcentral-chatbot": "^0.5.3",
+    "serverless-http": "^1.8.0",
+    "sqlite3": "4.0.4"
+  }
+}
