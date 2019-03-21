@@ -1,7 +1,9 @@
 
-# ringcentral-welcome-bot
+# ringcentral-welcome-bot-js
 
-Glip chatbot to welcome new team member
+Glip chatbot to welcome new team member, created with [ringcentral-chatbot-factory](https://github.com/zxdong262/ringcentral-chatbot-factory) and [ringcentral-chatbot-js](https://github.com/ringcentral/ringcentral-chatbot-js).
+
+![ ](screenshot/ss.png)
 
 ## Prerequisites
 
