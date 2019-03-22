@@ -31,7 +31,7 @@ cp .sample.env .env
 
 # create bot logic file
 # edit src/bot.js to create your own bot logic
-cp bot.js src/bot.js
+cp bot-logic.js src/bot.js
 
 # run local dev server
 yarn start
