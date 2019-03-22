@@ -22,7 +22,7 @@ yarn
 # so we need a https proxy for ringcentral to visit our local server
 yarn proxy
 # will show:
-# Forwarding https://xxxxx.ngrok.io -> localhost:8989
+# Forwarding https://xxxxx.ngrok.io -> localhost:3000
 
 # create env file
 cp .sample.env .env
