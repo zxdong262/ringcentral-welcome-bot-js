@@ -28,6 +28,11 @@ exports.onBotGetPost = async ({
 }) => {
   let reg = / *set +(.+)$/
   let arr = text.match(reg)
+  let where = {
+    botId: bot.id,
+    groupId: group.id,
+    name: botName
+  }
   if (arr && arr[1]) {
     let welcomeMsg = arr[1]
     await Service.update({
@@ -35,11 +40,7 @@ exports.onBotGetPost = async ({
         welcomeMsg
       }
     }, {
-      where: {
-        botId: bot.id,
-        groupId: group.id,
-        name: botName
-      }
+      where
     })
     return await bot.sendMessage(
       group.id,
@@ -47,13 +48,18 @@ exports.onBotGetPost = async ({
         text: 'New welcome message set'
       }
     )
+  } else {
+    let inst = await Service.findOne({
+      where
+    })
+    let text = help(bot.id, inst ? inst.data.welcomeMsg : undefined)
+    await bot.sendMessage(
+      group.id,
+      {
+        text
+      }
+    )
   }
-  await bot.sendMessage(
-    group.id,
-    {
-      text: help(bot.id)
-    }
-  )
 }
 
 
