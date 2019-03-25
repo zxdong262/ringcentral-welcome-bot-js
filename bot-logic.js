@@ -18,7 +18,7 @@ function defaultWelcomeMsg() {
 }
 
 function help(id, welcomeMsg = defaultWelcomeMsg()) {
-  return `Hello, I am welcome bot. I will welcome every new member who join this chatgroup with message "@newmember ${welcomeMsg}:grinning:".
+  return `Hello, I am welcome bot. I will welcome every new member who join this chatgroup with message "@newmember ${welcomeMsg}".
 
 You can reply "![:Person](${id}) **set** your-welcome-message" if you want to set custom welcome message.`
 }
@@ -112,9 +112,11 @@ exports.onPersonsAdded = async({
     return
   }
   let added = message.body.addedPersonIds
-  let at = added.reduce((prev, id) => {
-    return `${prev} ![:Person](${id})`
-  }, '').trim()
+  let at = added
+    .filter(id => id !== bot.id)
+    .reduce((prev, id) => {
+      return `${prev} ![:Person](${id})`
+    }, '').trim()
   await bot.sendMessage(group.id, {
     text: `${at}
 ${inst.data.welcomeMsg}
