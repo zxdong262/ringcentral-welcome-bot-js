@@ -11,6 +11,7 @@
     "proxy": "ngrok http 3000",
     "build": "node bin/build",
     "deploy": "node bin/deploy",
+    "bd": "npm run build && npm run deploy",
     "watch": "cd dist && ../node_modules/.bin/sls logs -f app -t",
     "lint": "eslint --max-warnings 0 --ext .js  src",
     "start": "npm run dev",
