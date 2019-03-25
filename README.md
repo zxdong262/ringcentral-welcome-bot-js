@@ -63,6 +63,13 @@ cp dist/serverless.sample.yml dist/serverless.yml
 cp dist/.env.sample.yml dist/.env.yml
 ```
 
+### AWS Lambda connects AWS RDS issue
+
+- If you create an RDS manually and let it create a new security group for you.
+- By default, the security group only allows inbound traffic from your current laptop's public IP address
+AWS Lambda by default cannot access the newly created AWS RDS
+- We need to update security group to allow inbound traffic from 0.0.0.0/0
+
 Edit `dist/serverless.yml` and `dist/.env.yml`, and make sure you set the proper name and required env.
 
 Deploy to AWS Lambda with `yarn build && yarn deploy`
