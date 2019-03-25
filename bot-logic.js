@@ -113,7 +113,6 @@ exports.onPersonsAdded = async({
   }
   let added = message.body.addedPersonIds
   let at = added
-    .filter(id => id !== bot.id)
     .reduce((prev, id) => {
       return `${prev} ![:Person](${id})`
     }, '').trim()
