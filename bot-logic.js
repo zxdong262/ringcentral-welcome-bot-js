@@ -26,7 +26,6 @@ You can reply "![:Person](${id}) **set** your-welcome-message" if you want to se
 exports.onBotGetPost = async ({
   group, bot, text
 }) => {
-  console.log('bot got text', text)
   let reg = / *set +(.+)$/
   let arr = text.match(reg)
   let where = {
