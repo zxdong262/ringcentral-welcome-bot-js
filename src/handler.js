@@ -6,6 +6,8 @@ import {
 import { Bot } from 'ringcentral-chatbot/dist/models'
 
 export default async event => {
+  console.log('got event')
+  console.log(event)
   const { type, message } = event
   if (type === 'Message4Bot') {
     await onBotGetPost(event)
